@@ -272,7 +272,7 @@
     height: 100%;
     width: 85%;
     padding-top: 15px;
-    padding-left: 110px;
+    padding-left: auto;
     color: #fff;
 
 }
@@ -420,6 +420,8 @@
             width: 100%;
             height: 55%;
             position: relative;
+            border-bottom-left-radius: 1rem;
+            border-bottom-right-radius: 1rem;
     }
 
     .video {
@@ -428,6 +430,8 @@
         background: url("./video-img/img5.jpg") lightgray no-repeat center center;
         background-size: cover;
         z-index: 1;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
 
     }
 
@@ -567,7 +571,8 @@
         height: 45%;
         width: 100%;
         border-top: #3D75FF;
-        border-radius: 2rem;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
     }
     .chatHeader .tab {
         font-size: 14px;
