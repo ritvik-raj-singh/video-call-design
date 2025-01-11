@@ -210,6 +210,24 @@
 .message:hover{
     scale: .95;
 }
+.timer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:5%;
+    left: 5%;
+    color: white;
+    font-size: 16px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+.timer img{
+    width: 14px;
+    height: 14px;
+
+}
 /* General Styles */
 .chatSection {
     position: fixed;
@@ -256,6 +274,11 @@
 .chatHeader .tab.active {
     background: #1e3a5f;
     color: #fff;
+}
+.chatHeader .tab.active img{
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
 }
 
 /* Messages Section */
@@ -358,8 +381,9 @@
 }
 
 .chatInputWrapper button img {
-    width: 36px;
-    height: 36px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
 }
 
 .toggleChatButton {
@@ -375,7 +399,7 @@
 
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 961px) {
     .wrapper {
         width: 100vw;
         height: 100vh;
@@ -391,7 +415,7 @@
     }
     .videoSection.compressed{
             width: 100%;
-            height: 45%;
+            height: 60%;
             position: relative;
     }
 
@@ -407,7 +431,7 @@
         width: 90px;
         height: 110px;
         position: absolute;
-        top: 3%;
+        top: 1%;
         right: 2%;
         border-radius: 10px;
         border: 1px solid rgba(255, 255, 255, 0.3);
@@ -451,7 +475,7 @@
         padding: 0 10px;
     }
 
-    .videoicon, .mic, .call, .message{
+    .videoicon, .mic, .call{
         width: 50px;
         height: 50px;
         flex-shrink: 0;
@@ -462,7 +486,7 @@
         align-items: center;
         transition: 0.2s all;
     }
-    .speaker{
+    .speaker, .message{
         display: none;
     }
 
@@ -470,10 +494,10 @@
         width: 70px;
         height: 50px;
         background-color: #F8000F;
-        border-radius: 10px;
+        border-radius: 140px;
     }
 
-    .call img, .videoicon img, .mic img, .message img{
+    .call img, .videoicon img, .mic img{
         width: 24px;
         height: 24px;
     }
@@ -490,13 +514,13 @@
         display: none; /* Exit button is hidden in phone view */
     }
 
-    /* Additional elements in phone view */
-    .timer {
+    .timer{
         position: absolute;
-        bottom: 17%;
+        top:75%;
+        bottom: 21%;
         left: 5%;
         color: white;
-        font-size: 16px;
+        font-size: 14px;
         background: rgba(0, 0, 0, 0.5);
         padding: 2px 8px;
         border-radius: 10px;
@@ -510,17 +534,17 @@
     .action-buttons {
         position: absolute;
         right: 5%;
-        bottom: 20%;
+        bottom: 25%;
         display: flex;
         flex-direction: column;
         gap: 10px;
     }
 
-    .action-buttons .camera, .action-buttons {
-        width: 60px;
-        height: 60px;
+    .action-buttons .camera, .action-buttons .chat {
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
-        background-color: rgba(0, 0, 0, 0.3);
+        background-color: rgba(0, 0, 0, 0.5);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -533,7 +557,7 @@
     /* Media Query for Mobile */
     /* Expanded State (Laptop) */
     .chatSection.expanded {
-        height: 55%;
+        height: 40%;
         width: 100%;
     }
 

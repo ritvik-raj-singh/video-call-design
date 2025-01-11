@@ -56,10 +56,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
 
-    // Selecting relevant DOM elements
-    const toggleChatButton = document.querySelector('.message');
+//for message box display
+var toggleChatButton;
+function domContent(){
+    toggleChatButton = ((window.getComputedStyle(document.querySelector('.message')).display!='none')?document.querySelector('.message'):document.querySelector('.chat'));
     console.log(toggleChatButton)
     const chatSection = document.querySelector('.chatSection');
     const sendButton = document.querySelector('.sendButton');
@@ -67,8 +68,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const chatMessages = document.querySelector('.chatMessages');
     const typingIndicator = document.querySelector('.typingIndicator');
     const tabMessages = document.querySelector('.tab.active');
-    const tabParticipants = document.querySelectorAll('.tab')[1];
+    // const tabParticipants = document.querySelectorAll('.tab')[1];
     const videoSection = document.querySelector('.videoSection');
+    const closeMsg = document.querySelector('.closeMsg');
+
 
     // Function to add a new message to the chat window
     function addMessage(sender, text, time, alignment = 'left') {
@@ -138,25 +141,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Function to handle switching between "Messages" and "Participants" tabs
-    function switchTab() {
-        if (tabMessages.classList.contains('active')) {
-            tabMessages.classList.remove('active');
-            tabParticipants.classList.add('active');
-        } else {
-            tabParticipants.classList.remove('active');
-            tabMessages.classList.add('active');
-        }
-    }
+    // function switchTab() {
+    //     if (tabMessages.classList.contains('active')) {
+    //         tabMessages.classList.remove('active');
+    //         tabParticipants.classList.add('active');
+    //     } else {
+    //         tabParticipants.classList.remove('active');
+    //         tabMessages.classList.add('active');
+    //     }
+    // }
 
-    // Event listener for tab switching
-    tabMessages.addEventListener('click', switchTab);
-    tabParticipants.addEventListener('click', switchTab);
+    // // Event listener for tab switching
+    // tabMessages.addEventListener('click', switchTab);
+    // tabParticipants.addEventListener('click', switchTab);
 
     // Toggle Chat Section
     toggleChatButton.addEventListener('click', () => {
-        chatSection.classList.toggle('hidden');
-        chatSection.classList.toggle('expanded');
-        videoSection.classList.toggle('full')
+        chatSection.classList.toggle('expanded')
+        videoSection.classList.toggle('compressed');
+    });
+    closeMsg.addEventListener('click', () => {
+        chatSection.classList.toggle('expanded')
         videoSection.classList.toggle('compressed');
     });
 
@@ -173,4 +178,13 @@ document.addEventListener("DOMContentLoaded", () => {
         addMessage('You', 'Yes, it will decrease the loading.', '2:14 pm', 'right');
         addMessage('Jack', 'Anyone is up for illustrations. I think there are less relatable images according to our brand.', '2:15 pm', 'left');
     }, 500);
+
+}
+
+const mediaQuery = window.matchMedia("(max-width: 961px)"); // Media query for phones
+mediaQuery.addEventListener("change", domContent);
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Selecting relevant DOM elements
+    domContent();
 })

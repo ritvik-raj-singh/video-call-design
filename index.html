@@ -31,13 +31,16 @@
             <!-- Timer -->
             <div class="timer">
                 <img src="./asset/red-circle.png" alt="timer">
-                00:12:36 <!-- Example time -->
+                <div>00:12:36 <!-- Example time --></div>
             </div>
 
             <!-- Action Buttons -->
             <div class="action-buttons">
                 <button class="camera">
                     <img src="./asset/cam-rotate.png" alt="Camera">
+                </button>
+                <button class="chat">
+                    <img src="./asset/message.png" alt="message">
                 </button>
             </div>
 
@@ -64,8 +67,9 @@
         <div class="chatSection hidden">
             <!-- Header Section -->
             <div class="chatHeader">
-                <button class="tab active">Messages (4)</button>
-                <button class="tab">Participants</button>
+                
+                <button class="tab active"><img src="./asset/cross.png" class="closeMsg" alt="close"> <div>Messages (4)</div></button>
+                <!-- <button class="tab">Participants</button> -->
             </div>
         
             <!-- Messages Section -->
@@ -125,6 +129,12 @@
             <!-- Input Section -->
             <div class="chatInputWrapper">
                 <input type="text" placeholder="Write message here">
+                <button class="sendButton">
+                    <label for="fileInput" class="sendButton">
+                        <img src="./asset/attach-file.png" alt="Send">
+                    </label>
+                    <input type="file" id="fileInput" class="fileInput" style="display: none;" />
+                </button>
                 <button class="sendButton">
                     <img src="./asset/send.png" alt="Send">
                 </button>
