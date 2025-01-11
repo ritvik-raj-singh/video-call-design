@@ -9,8 +9,13 @@
  overflow: hidden !important;
  margin: 0 ;
 }
-.videoSection{
+.videoSection.full{
     width: 100%;
+    height: 100%;
+    position: relative;
+}
+.videoSection.compressed{
+    width: 70%;
     height: 100%;
     position: relative;
 }
@@ -22,19 +27,41 @@
     z-index: 1;
 }
 
-.smallvideo{
+.smallvideo {
     width: 168.938px;
     height: 202.156px;
     flex-shrink: 0;
     background-color: black;
     position: absolute;
-    top: 20%;
+    top: 25%;
     right: 3%;
     border-radius: 7.36px;
     border: 1.06px solid rgba(255, 255, 255, 0.30);
-    background: url("./video-img/img2.jpg") lightgray no-repeat center center;
+    background: url("./video-img/img4.jpg") lightgray no-repeat center center;
     background-size: cover;
+    overflow: hidden; /* Ensures the icon doesn't overflow */
+}
 
+.expand-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 24px;
+    height: 24px;
+    background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent background */
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2; /* Ensures the icon stays above the video */
+}
+
+.expand-icon img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
 }
 .bottomWrapper{
     width: 50%;
@@ -58,7 +85,7 @@
     border-radius: 100%;
     border: 0;
     position: absolute;
-    top: 10%;
+    top: 12%;
     right: 10%;
     cursor: pointer;
     transition: .4s all;
@@ -183,4 +210,353 @@
 .message:hover{
     scale: .95;
 }
+/* General Styles */
+.chatSection {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: width 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 999;
+}
+
+/* Default State: Hidden */
+.chatSection.hidden {
+    width: 0;
+}
+
+/* Expanded State (Laptop) */
+.chatSection.expanded {
+    width: 30%; /* Opens in 30% of the screen on larger devices */
+}
+
+/* Header Section */
+.chatHeader {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+}
+
+.chatHeader .tab {
+    flex: 1;
+    padding: 15px;
+    text-align: center;
+    border: none;
+    background: #f7f9fc;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.chatHeader .tab.active {
+    background: #1e3a5f;
+    color: #fff;
+}
+
+/* Messages Section */
+.chatMessages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+.messageRow {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.messageRow.left {
+    justify-content: flex-start;
+}
+
+.messageRow.right {
+    justify-content: flex-end;
+}
+
+.profilePic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.messageContent {
+    max-width: 75%;
+    background: #1e3a5f;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 10px;
+    position: relative;
+    font-size: 14px;
+}
+
+.messageContent .messageHeader {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.messageContent .senderName {
+    font-weight: bold;
+}
+
+.messageContent .messageTime {
+    color: #bbb;
+}
+
+.messageRow.right .messageContent {
+    background: #004aad;
+    color: #fff;
+    border-radius: 10px 0 10px 10px;
+}
+
+/* Typing Indicator */
+.typingIndicator {
+    font-size: 14px;
+    color: #aaa;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* Input Section */
+.chatInputWrapper {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    background: #fff;
+}
+
+.chatInputWrapper input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    outline: none;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.chatInputWrapper button {
+    background: white;
+    color: #fff;
+    border: none;
+    padding: 5px 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chatInputWrapper button img {
+    width: 36px;
+    height: 36px;
+}
+
+.toggleChatButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: #1e3a5f;
+    color: white;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .wrapper {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden !important;
+        margin: 0;
+        background: black;
+    }
+
+    .videoSection.full{
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    .videoSection.compressed{
+            width: 100%;
+            height: 30%;
+            position: relative;
+    }
+
+    .video {
+        width: 100%;
+        height: 100%;
+        background: url("./video-img/img5.jpg") lightgray no-repeat center center;
+        background-size: cover;
+        z-index: 1;
+    }
+
+    .smallvideo {
+        width: 120px;
+        height: 140px;
+        position: absolute;
+        top: 10%;
+        right: 5%;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        background: url("./video-img/img2.jpg") lightgray no-repeat center center;
+        background-size: cover;
+    }
+    .smallvideo {
+        width: 168.938px;
+        height: 202.156px;
+        flex-shrink: 0;
+        background-color: black;
+        position: absolute;
+        top: 25%;
+        right: 3%;
+        border-radius: 7.36px;
+        border: 1.06px solid rgba(255, 255, 255, 0.30);
+        background: url("./video-img/img2.jpg") lightgray no-repeat center center;
+        background-size: cover;
+        overflow: hidden; /* Ensures the icon doesn't overflow */
+    }
+    
+    .expand-icon {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        width: 24px;
+        height: 24px;
+        background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent background */
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 2; /* Ensures the icon stays above the video */
+    }
+    
+    .expand-icon img {
+        width: 16px;
+        height: 16px;
+        object-fit: contain;
+    }
+    
+
+    .bottomWrapper {
+        width: 90%;
+        height: 70px;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        position: absolute;
+        left: 5%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0 10px;
+    }
+
+    .videoicon, .mic, .call, .message{
+        width: 50px;
+        height: 50px;
+        flex-shrink: 0;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.2s all;
+    }
+    .speaker{
+        display: none;
+    }
+
+    .call {
+        width: 70px;
+        height: 50px;
+        background-color: #F8000F;
+        border-radius: 10px;
+    }
+
+    .call img, .videoicon img, .mic img, .message img{
+        width: 24px;
+        height: 24px;
+    }
+
+    .call img {
+        rotate: 45deg;
+    }
+
+    .fullscreen {
+        display: none; /* Fullscreen button is hidden in phone view */
+    }
+
+    .exit {
+        display: none; /* Exit button is hidden in phone view */
+    }
+
+    /* Additional elements in phone view */
+    .timer {
+        position: absolute;
+        bottom: 17%;
+        left: 5%;
+        color: white;
+        font-size: 16px;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 2px 8px;
+        border-radius: 10px;
+    }
+    .timer img{
+        width: 14px;
+        height: 14px;
+
+    }
+
+    .action-buttons {
+        position: absolute;
+        right: 5%;
+        bottom: 20%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .action-buttons .camera, .action-buttons {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .action-buttons .camera img, .action-buttons .chat img {
+        width: 34px;
+        height: 34px;
+    }
+    /* Media Query for Mobile */
+    /* Expanded State (Laptop) */
+    .chatSection.expanded {
+        height: 70%;
+        width: 100%;
+    }
+
+
+    .chatHeader .tab {
+        font-size: 14px;
+    }
+
+    .messageContent {
+        font-size: 12px;
+    }
+}
+
 
