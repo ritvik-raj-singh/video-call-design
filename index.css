@@ -39,23 +39,23 @@
     border: 1.06px solid rgba(255, 255, 255, 0.30);
     background: url("./video-img/img4.jpg") lightgray no-repeat center center;
     background-size: cover;
-    overflow: hidden; /* Ensures the icon doesn't overflow */
+    overflow: hidden; 
 }
 
 .expand-icon {
     position: absolute;
     top: 5px;
     right: 5px;
-    width: 24px;
-    height: 24px;
-    background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent background */
+    width: 35px;
+    height: 35px;
+    background-color: rgba(0, 0, 0, 0.6); 
     border: none;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 2; /* Ensures the icon stays above the video */
+    z-index: 2; 
 }
 
 .expand-icon img {
@@ -86,7 +86,7 @@
     border: 0;
     position: absolute;
     top: 12%;
-    right: 10%;
+    right: 3%;
     cursor: pointer;
     transition: .4s all;
 }
@@ -107,7 +107,7 @@
     border: 0;
     position: absolute;
     top: 1%;
-    right: 10%;
+    right: 3%;
     cursor: pointer;
     transition: .2s all;
 
@@ -231,7 +231,6 @@
 .timer-text{
     margin: 7px;
 }
-/* General Styles */
 .chatSection {
     position: fixed;
     bottom: 0;
@@ -239,25 +238,21 @@
     width: 0;
     height: 100%;
     background-color: #ffffff;
-    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
     transition: width 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    z-index: 999;
+    z-index: 100;
 }
 
-/* Default State: Hidden */
 .chatSection.hidden {
     width: 0;
 }
 
-/* Expanded State (Laptop) */
 .chatSection.expanded {
-    width: 30%; /* Opens in 30% of the screen on larger devices */
+    width: 30%; 
 }
 
-/* Header Section */
 .chatHeader {
     display: flex;
     border-bottom: 1px solid #ddd;
@@ -390,12 +385,9 @@
 }
 
 .toggleChatButton {
-    position: fixed;
     bottom: 20px;
     right: 20px;
-    padding: 10px;
-    background-color: #1e3a5f;
-    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
     cursor: pointer;
     border-radius: 50%;
 }
@@ -448,7 +440,7 @@
         right: 5px;
         width: 24px;
         height: 24px;
-        background-color: rgba(0, 0, 0, 0.2); 
+        background-color: rgba(0, 0, 0, 0.6); 
         border: none;
         border-radius: 50%;
         display: flex;
@@ -518,12 +510,12 @@
     .timer{
         position: absolute;
         top:75%;
-        bottom: 21%;
+        top: 4%;
         left: 5%;
         color: white;
         font-size: 14px;
         background: rgba(0, 0, 0, 0.5);
-        border-radius: 1rem;
+        border-radius: 2rem;
     }
     .timer img{
         width: 12px;
@@ -547,15 +539,20 @@
         width: 50px;
         height: 50px;
         border-radius: 50%;
+        border: none;
         background-color: rgba(0, 0, 0, 0.5);
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    .action-buttons .camera img, .action-buttons .chat img {
+    .action-buttons .camera img {
         width: 34px;
         height: 34px;
+    }
+    .action-buttons .chat img {
+        width: 28px;
+        height: 28px;
     }
     .chatSection.expanded {
         height: 40%;
