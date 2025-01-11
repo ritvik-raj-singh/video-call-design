@@ -288,12 +288,13 @@
 
 .messageContent {
     max-width: 75%;
-    background: #1e3a5f;
+    background: #7aaef1;
     color: #fff;
     padding: 10px 15px;
     border-radius: 10px;
     position: relative;
     font-size: 14px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .messageContent .messageHeader {
@@ -305,14 +306,15 @@
 
 .messageContent .senderName {
     font-weight: bold;
+    color:#ffffff
 }
 
 .messageContent .messageTime {
-    color: #bbb;
+    color: #ffffff;
 }
 
 .messageRow.right .messageContent {
-    background: #004aad;
+    background: #22569a;
     color: #fff;
     border-radius: 10px 0 10px 10px;
 }
@@ -389,7 +391,7 @@
     }
     .videoSection.compressed{
             width: 100%;
-            height: 30%;
+            height: 45%;
             position: relative;
     }
 
@@ -402,29 +404,15 @@
     }
 
     .smallvideo {
-        width: 120px;
-        height: 140px;
+        width: 90px;
+        height: 110px;
         position: absolute;
-        top: 10%;
-        right: 5%;
+        top: 3%;
+        right: 2%;
         border-radius: 10px;
         border: 1px solid rgba(255, 255, 255, 0.3);
         background: url("./video-img/img2.jpg") lightgray no-repeat center center;
         background-size: cover;
-    }
-    .smallvideo {
-        width: 168.938px;
-        height: 202.156px;
-        flex-shrink: 0;
-        background-color: black;
-        position: absolute;
-        top: 25%;
-        right: 3%;
-        border-radius: 7.36px;
-        border: 1.06px solid rgba(255, 255, 255, 0.30);
-        background: url("./video-img/img2.jpg") lightgray no-repeat center center;
-        background-size: cover;
-        overflow: hidden; /* Ensures the icon doesn't overflow */
     }
     
     .expand-icon {
@@ -529,10 +517,10 @@
     }
 
     .action-buttons .camera, .action-buttons {
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
         border-radius: 50%;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0.3);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -545,7 +533,7 @@
     /* Media Query for Mobile */
     /* Expanded State (Laptop) */
     .chatSection.expanded {
-        height: 70%;
+        height: 55%;
         width: 100%;
     }
 
