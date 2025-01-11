@@ -140,20 +140,6 @@ function domContent(){
         }
     });
 
-    // Function to handle switching between "Messages" and "Participants" tabs
-    // function switchTab() {
-    //     if (tabMessages.classList.contains('active')) {
-    //         tabMessages.classList.remove('active');
-    //         tabParticipants.classList.add('active');
-    //     } else {
-    //         tabParticipants.classList.remove('active');
-    //         tabMessages.classList.add('active');
-    //     }
-    // }
-
-    // // Event listener for tab switching
-    // tabMessages.addEventListener('click', switchTab);
-    // tabParticipants.addEventListener('click', switchTab);
 
     // Toggle Chat Section
     toggleChatButton.addEventListener('click', () => {
