@@ -1,37 +1,31 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VideoCall</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="icons.css">
 </head>
+
 <body>
     <div class="wrapper">
         <div class="videoSection full">
             <!-- Main Video -->
-            <div class="video full"></div>
+            <div class="mainVideo  full"> 
+                <video class="localVideo" src="./video/video1.mp4" autoplay></video>
+                </div>
 
             <!-- Small Video for the user -->
-            <div id="smallvideo" class="smallvideo">
+            <div id="smallvideo" class="insetVideo">
                 <button class="expand-icon">
                     <img src="./asset/expand.png" alt="Expand" />
                 </button>
             </div>
-
-            <!-- Fullscreen Button -->
-            <button class="fullscreen">
-                <img src="./asset/full-screen.png" alt="Full Screen">
-            </button>
-
-            <!-- Exit Button -->
-            <button class="exit">
-                <img src="./asset/exit.png" alt="Exit">
-            </button>
-
             <!-- Timer -->
             <div class="timer">
                 <img src="./asset/red-circle.png" alt="timer">
-                <div class="timer-text"> 00:12:36 <!-- Example time --></div>
+                <div class="timer-text"> 00:12:36</div>
             </div>
 
             <!-- Action Buttons -->
@@ -48,12 +42,12 @@
             <div class="bottomWrapper">
                 <button class="speaker">
                     <img src="./asset/volume.png" alt="Speaker">
-                </button> 
+                </button>
                 <button class="videoicon">
                     <img src="./asset/video.png" alt="Video">
-                </button> 
-                <button class="call">
-                    <img src="./asset/phone-call.png" alt="Call">
+                </button>
+                <button class="endCall">
+                    <img src="./asset/phone-call.png" alt="endCall">
                 </button>
                 <button class="mic">
                     <img src="./asset/mic.png" alt="Mic">
@@ -63,16 +57,16 @@
                 </button>
             </div>
         </div>
-
+        <!-- Chat-Section  -->
         <div class="chatSection hidden">
             <!-- Header Section -->
             <div class="chatHeader">
-                
+
                 <button class="tab active"><img src="./asset/cross.png" class="closeMsg" alt="close"> </button>
                 <div class="Header-text">Messages (4)</div>
                 <!-- <button class="tab">Participants</button> -->
             </div>
-        
+
             <!-- Messages Section -->
             <div class="chatMessages">
                 <!-- Message from Casey -->
@@ -86,7 +80,7 @@
                         <div class="messageText">Hello Guys! What's your opinion?</div>
                     </div>
                 </div>
-        
+
                 <!-- Message from John -->
                 <div class="messageRow left">
                     <img src="video-img/img4.jpg" alt="John" class="profilePic">
@@ -98,7 +92,7 @@
                         <div class="messageText">Images are better.</div>
                     </div>
                 </div>
-        
+
                 <!-- Your Message -->
                 <div class="messageRow right">
                     <div class="messageContent">
@@ -108,7 +102,7 @@
                         <div class="messageText">Yes, it will decrease the loading.</div>
                     </div>
                 </div>
-        
+
                 <!-- Message from Jack -->
                 <div class="messageRow left">
                     <img src="video-img/img4.jpg" alt="Jack" class="profilePic">
@@ -118,15 +112,16 @@
                             <span class="messageTime">2:15 pm</span>
                         </div>
                         <div class="messageText">
-                            Anyone is up for illustrations. I think there are less relatable images according to our brand.
+                            Anyone is up for illustrations. I think there are less relatable images according to our
+                            brand.
                         </div>
                     </div>
                 </div>
-        
+
                 <!-- Typing Indicator -->
                 <div class="typingIndicator">John is typing...</div>
             </div>
-        
+
             <!-- Input Section -->
             <div class="chatInputWrapper">
                 <input type="text" placeholder="Write message here">
@@ -141,9 +136,11 @@
                 </button>
             </div>
         </div>
-        
-        
+
+
     </div>
     <script src="index.js"></script>
+    <script src="index.js"></script>
 </body>
+
 </html>

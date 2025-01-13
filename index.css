@@ -19,15 +19,13 @@
     height: 100%;
     position: relative;
 }
-.video {
+.mainVideo  {
     width: 100%;
     height: 100%; 
-    background: url("./video-img/img5.jpg") lightgray no-repeat center center;
-    background-size: cover;
     z-index: 1;
 }
 
-.smallvideo {
+.insetVideo {
     width: 168.938px;
     height: 202.156px;
     flex-shrink: 0;
@@ -62,153 +60,6 @@
     width: 16px;
     height: 16px;
     object-fit: contain;
-}
-.bottomWrapper{
-    width: 50%;
-    height: 110px;
-    flex-shrink: 0;
-    border-radius: 10.788px;
-    box-shadow: 3.237px 4.315px 34.523px 0px rgba(0, 0, 0, 0.54);
-    backdrop-filter: blur(34.52267837524414px);
-    position: absolute;
-    bottom: 3%;;
-    right: 25% !important;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-.fullscreen{
-    width: 64.513px;
-    height: 64.18px;
-    flex-shrink: 0;
-    background-color: rgba(0, 0, 0, 0.52);
-    border-radius: 100%;
-    border: 0;
-    position: absolute;
-    top: 12%;
-    right: 3%;
-    cursor: pointer;
-    transition: .4s all;
-}
-.fullscreen img {
-    width: 33.513px;
-    height: 33.18px;
-}
-.fullscreen:hover{
-    scale: .95;
-}
-
-.exit{
-    width: 64.513px;
-    height: 64.18px;
-    flex-shrink: 0;
-    background-color: rgba(0, 0, 0, 0.52);
-    border-radius: 100%;
-    border: 0;
-    position: absolute;
-    top: 1%;
-    right: 3%;
-    cursor: pointer;
-    transition: .2s all;
-
-}
-.exit img {
-    width: 37.513px;
-    height: 37.18px;
-}
-.exit:hover{
-    scale: .95;
-}
-.videoicon{
-    width: 64.513px;
-    height: 64.18px;
-    flex-shrink: 0;
-    background-color: rgba(0, 0, 0, 0.52);
-    border-radius: 100%;
-    border: 0;
-    cursor: pointer;
-    transition: .4s all;
-
-}
-.videoicon img {
-    width: 37.513px;
-    height: 37.18px;
-}
-.videoicon:hover{
-    scale: .95;
-}
-.mic{
-    width: 64.513px;
-    height: 64.18px;
-    flex-shrink: 0;
-    background-color: rgba(0, 0, 0, 0.52);
-    border-radius: 100%;
-    border: 0;
-    cursor: pointer;
-    transition: .2s all;
-
-}
-.mic img {
-    width: 37.513px;
-    height: 37.18px;
-}
-.mic:hover{
-    scale: .95;
-}
-.call{
-    width: 90.28px;
-    height: 60.172px;
-    flex-shrink: 0;
-    background-color: #F8000F;
-    cursor: pointer;
-    transition: .2s all;
-    border: 0;
-    border-radius: .5rem;
-
-}
-.call img {
-    width: 37.513px;
-    height: 37.18px;
-    rotate: 45deg;
-
-}
-.call:hover{
-    scale: .95;
-}
-.speaker{
-    width: 64.513px;
-    height: 64.18px;
-    flex-shrink: 0;
-    background-color: rgba(0, 0, 0, 0.52);
-    border-radius: 100%;
-    border: 0;
-    cursor: pointer;
-    transition: .2s all;
-}
-.speaker img {
-    width: 37.513px;
-    height: 30.18px;
-}
-.speaker:hover{
-    scale: .95;
-}
-.message{
-    width: 64.513px;
-    height: 64.18px;
-    flex-shrink: 0;
-    background-color: rgba(0, 0, 0, 0.52);
-    border-radius: 100%;
-    border: 0;
-    cursor: pointer;
-    transition: .2s all;
-
-}
-.message img {
-    width: 32.513px;
-    height: 32.18px;
-}
-.message:hover{
-    scale: .95;
 }
 .timer{
     display: flex;
@@ -424,18 +275,23 @@
             border-bottom-right-radius: 1rem;
     }
 
-    .video {
+    .mainVideo  {
         width: 100%;
         height: 100%;
-        background: url("./video-img/img5.jpg") lightgray no-repeat center center;
-        background-size: cover;
-        z-index: 1;
-        border-bottom-left-radius: 1rem;
-        border-bottom-right-radius: 1rem;
-
+        position: relative;
+        background-color: pink;
+        }    
+    .localVideo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures the video fully covers its container */
+        position: absolute; /* Ensures no unnecessary spacing */
+        top: 0;
+        left: 0;
     }
+    
 
-    .smallvideo {
+    .insetVideo {
         width:110px;
         height: 130px;
         position: absolute;
@@ -468,58 +324,6 @@
         height: 10px;
         object-fit: contain;
     }
-    
-
-    .bottomWrapper {
-        width: 70%;
-        height: 70px;
-        border-radius: 20px;
-        backdrop-filter: blur(10px);
-        position: absolute;
-        left: 15%;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        padding: 0 10px;
-    }
-
-    .videoicon, .mic, .call{
-        width: 50px;
-        height: 50px;
-        flex-shrink: 0;
-        border-radius: 50%;
-        background-color: rgba(0, 0, 0, 0.5);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: 0.2s all;
-    }
-    .speaker, .message{
-        display: none;
-    }
-
-    .call {
-        background-color: #F8000F;
-        border-radius: 100%;
-    }
-
-    .call img, .videoicon img, .mic img{
-        width: 24px;
-        height: 24px;
-    }
-
-    .call img {
-        rotate: 45deg;
-    }
-
-    .fullscreen {
-        display: none; 
-    }
-
-    .exit {
-        display: none; 
-    }
-
     .timer{
         position: absolute;
         top:75%;
