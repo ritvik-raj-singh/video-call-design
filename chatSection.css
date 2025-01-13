@@ -35,7 +35,7 @@
     height: 100%;
     width: 85%;
     padding-top: 15px;
-    padding-left: auto;
+padding-left: 2.5rem;
     color: #fff;
 }
 .chatHeader .tab.active {
