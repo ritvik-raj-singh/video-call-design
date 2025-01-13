@@ -59,6 +59,32 @@
     overflow-y: auto;
 }
 
+.chat-headers{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.chat-headers span{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    color: rgb(111, 111, 111);
+    font-weight: 400;
+}
+.msg-time{
+    display: flex;
+    flex-direction: column;
+    
+}
+.msg-time span{
+    display: block;
+    margin-left: 68%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    color: rgb(111, 111, 111);
+    font-weight: 400;
+}
+
+
 .messageRow {
     display: flex;
     align-items: flex-start;
@@ -80,7 +106,7 @@
     margin-right: 10px;
 }
 .messageContent {
-    max-width: 75%;
+    max-width: 90%;
     background: #7aaef1;
     color: #fff;
     padding: 10px 15px;
@@ -88,6 +114,7 @@
     position: relative;
     font-size: 14px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
 }
 .messageContent .messageHeader {
     display: flex;
