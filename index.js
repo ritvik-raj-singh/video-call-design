@@ -74,38 +74,66 @@ function domContent(){
 
 
     // Function to add a new message to the chat window
-    function addMessage(sender, text, time, alignment = 'left') {
-        const messageRow = document.createElement('div');
-        messageRow.classList.add('messageRow', alignment);
+function addMessage(sender, text, time, alignment = 'left') {
+    // Select the chatMessages container
+    const chatMessages = document.querySelector('.chatMessages');
 
-        if (alignment === 'left') {
-            const profilePic = document.createElement('img');
-            profilePic.src = 'video-img/img4.jpg';
-            profilePic.alt = sender;
-            profilePic.classList.add('profilePic');
-            messageRow.appendChild(profilePic);
-        }
+    // Create the message row and add the alignment class
+    const messageRow = document.createElement('div');
+    messageRow.classList.add('messageRow', alignment);
 
-        const messageContent = document.createElement('div');
-        messageContent.classList.add('messageContent');
+    // Create the chat headers container (for profile pic and sender name)
+    const chatHeaders = document.createElement('div');
+    chatHeaders.classList.add('chat-headers');
 
-        const messageHeader = document.createElement('div');
-        messageHeader.classList.add('messageHeader');
-        messageHeader.innerHTML = `
-            <span class="senderName">${sender}</span>
-            <span class="messageTime">${time}</span>
-        `;
-        messageContent.appendChild(messageHeader);
-
-        const messageText = document.createElement('div');
-        messageText.classList.add('messageText');
-        messageText.textContent = text;
-        messageContent.appendChild(messageText);
-
-        messageRow.appendChild(messageContent);
-        chatMessages.appendChild(messageRow);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
+    // Add the profile picture only for 'left' aligned messages
+    if (alignment === 'left') {
+        const profilePic = document.createElement('img');
+        profilePic.src = 'video-img/img4.jpg'; // Default profile pic
+        profilePic.alt = sender;
+        profilePic.classList.add('profilePic');
+        chatHeaders.appendChild(profilePic);
     }
+
+    // Add the sender's name
+    const senderName = document.createElement('span');
+    senderName.classList.add('senderName');
+    senderName.textContent = sender;
+    chatHeaders.appendChild(senderName);
+
+    messageRow.appendChild(chatHeaders);
+
+    // Create the message time and text container
+    const msgTime = document.createElement('div');
+    msgTime.classList.add('msg-time');
+
+    const messageContent = document.createElement('div');
+    messageContent.classList.add('messageContent');
+
+    // Add the message text
+    const messageText = document.createElement('div');
+    messageText.classList.add('messageText');
+    messageText.textContent = text;
+    messageContent.appendChild(messageText);
+
+    // Add the message time
+    const messageTime = document.createElement('span');
+    messageTime.classList.add('messageTime');
+    messageTime.textContent = time;
+
+    msgTime.appendChild(messageContent);
+    msgTime.appendChild(messageTime);
+
+    // Add msg-time to the message row
+    messageRow.appendChild(msgTime);
+
+    // Append the new message row to the chat messages container
+    chatMessages.appendChild(messageRow);
+
+    // Scroll to the bottom of the chat window
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
 
     // Function to simulate "typing" indicator
     function showTypingIndicator(sender) {
@@ -123,7 +151,7 @@ function domContent(){
         if (messageText) {
             const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
-            addMessage('You', messageText, time, 'right');
+            addMessage('', messageText, time, 'right');
             messageInput.value = '';
         }
     }
@@ -156,14 +184,6 @@ function domContent(){
     setTimeout(() => {
         showTypingIndicator('John');
     }, 1000);
-
-    // Example: Add some initial messages
-    setTimeout(() => {
-        addMessage('Casey', "Hello Guys! What's your opinion?", '2:12 pm', 'left');
-        addMessage('John', 'Images are better.', '2:13 pm', 'left');
-        addMessage('You', 'Yes, it will decrease the loading.', '2:14 pm', 'right');
-        addMessage('Jack', 'Anyone is up for illustrations. I think there are less relatable images according to our brand.', '2:15 pm', 'left');
-    }, 500);
 
 }
 
