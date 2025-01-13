@@ -26,9 +26,11 @@ function stopTimer() {
 }
 
 // Example: Starting and stopping the timer
-document.getElementById('startCallButton').addEventListener('click', () => {
+document.addEventListener('DOMContentLoaded',() =>{
   startTimer();
-});
+
+})
+  
 
 document.getElementById('endCallButton').addEventListener('click', () => {
   stopTimer();
