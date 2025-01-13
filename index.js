@@ -174,3 +174,44 @@ document.addEventListener("DOMContentLoaded", () => {
     // Selecting relevant DOM elements
     domContent();
 })
+
+
+
+const video = document.querySelector('.icon-visible-video');
+const speaker = document.querySelector('.icon-visible-volume');
+const mic = document.querySelector('.icon-visible-mic');
+const noVideo = document.querySelector('.video');
+const noAudio = document.querySelector('.mute');
+const noMic = document.querySelector('.mic-off');
+
+
+video.addEventListener("click",() => {
+    video.classList.toggle('icon-hidden');
+    noVideo.classList.toggle('icon-hidden');
+
+})
+noVideo.addEventListener("click",() => {
+    video.classList.toggle('icon-hidden');
+    noVideo.classList.toggle('icon-hidden');
+
+})
+speaker.addEventListener("click",() => {
+    noAudio.classList.toggle('icon-hidden');
+    speaker.classList.toggle('icon-hidden');
+
+})
+noAudio.addEventListener("click",() => {
+    noAudio.classList.toggle('icon-hidden');
+    speaker.classList.toggle('icon-hidden');
+
+})
+mic.addEventListener("click",() => {
+    mic.classList.toggle('icon-hidden');
+    noMic.classList.toggle('icon-hidden');
+
+})
+noMic.addEventListener("click",() => {
+    mic.classList.toggle('icon-hidden');
+    noMic.classList.toggle('icon-hidden');
+
+})

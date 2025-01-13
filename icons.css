@@ -59,6 +59,9 @@
     width: 32.513px;
     height: 32.18px;
 }
+.icon-hidden {
+    display: none;
+}
 
 @media only screen and (max-width: 961px) {
     .bottomWrapper {
