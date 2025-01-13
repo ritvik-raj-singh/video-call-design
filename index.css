@@ -24,7 +24,11 @@
     height: 100%; 
     z-index: 1;
 }
-
+.localVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video fully covers its container */
+}
 .insetVideo {
     width: 168.938px;
     height: 202.156px;
@@ -278,19 +282,7 @@
     .mainVideo  {
         width: 100%;
         height: 100%;
-        position: relative;
-        background-color: pink;
         }    
-    .localVideo {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* Ensures the video fully covers its container */
-        position: absolute; /* Ensures no unnecessary spacing */
-        top: 0;
-        left: 0;
-    }
-    
-
     .insetVideo {
         width:110px;
         height: 130px;
