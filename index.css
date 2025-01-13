@@ -33,14 +33,11 @@
     width: 168.938px;
     height: 202.156px;
     flex-shrink: 0;
-    background-color: black;
     position: absolute;
-    top: 25%;
-    right: 3%;
+    top: 2%;
+    right: 2%;
     border-radius: 7.36px;
-    border: 1.06px solid rgba(255, 255, 255, 0.30);
-    background: url("./video-img/img4.jpg") lightgray no-repeat center center;
-    background-size: cover;
+    border: 0;
     overflow: hidden; 
 }
 .remoteVideo{
@@ -102,9 +99,7 @@
         top: 1%;
         right: 2%;
         border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        background: url("./video-img/img2.jpg") lightgray no-repeat center center;
-        background-size: cover;
+        border: 0;
     }
     
     .expand-icon {

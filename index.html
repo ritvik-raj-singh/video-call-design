@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="icons.css">
     <link rel="stylesheet" href="chatSection.css">
+    <link rel="stylesheet" href="timer.css">
 </head>
 
 <body>
@@ -26,9 +27,9 @@
 
             </div>
             <!-- Timer -->
-            <div class="timer">
+            <div class="timer" >
                 <img src="./asset/red-circle.png" alt="timer">
-                <div class="timer-text"> 00:12:36</div>
+                <div id="timer" class="timer-text"> 00:00:00</div>
             </div>
 
             <!-- Action Buttons -->
@@ -49,7 +50,7 @@
                 <button class="videoicon">
                     <img src="./asset/video.png" alt="Video">
                 </button>
-                <button class="endCall">
+                <button class="endCall" id="endCallButton">
                     <img src="./asset/phone-call.png" alt="endCall">
                 </button>
                 <button class="mic">
@@ -143,7 +144,7 @@
 
     </div>
     <script src="index.js"></script>
-    <script src="index.js"></script>
+    <script src="timer.js"></script>
 </body>
 
 </html>

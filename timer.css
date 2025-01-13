@@ -3,8 +3,8 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    top:5%;
-    left: 5%;
+    top:2%;
+    left: 2%;
     color: white;
     font-size: 16px;
     background: rgba(0, 0, 0, 0.5);
@@ -22,9 +22,6 @@
 @media only screen and (max-width: 961px) {
     .timer{
         position: absolute;
-        top:75%;
-        top: 4%;
-        left: 5%;
         color: white;
         font-size: 14px;
         background: rgba(0, 0, 0, 0.5);
