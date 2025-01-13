@@ -1,14 +1,32 @@
-const smallvideo = document.getElementById("insetVideo");
+//For movement of remoteVideo
+const smallVideo = document.getElementById("insetVideo");
+const videoSection = document.querySelector(".videoSection");
+
 let offsetX, offsetY;
 
 const move = (e) => {
-    smallvideo.style.left = `${e.clientX - offsetX}px`;
-    smallvideo.style.top = `${e.clientY - offsetY}px`;
+    const videoRect = smallVideo.getBoundingClientRect();
+    const containerRect = videoSection.getBoundingClientRect();
+
+    // Calculate the new position relative to the videoSection
+    let newLeft = e.clientX - offsetX - containerRect.left;
+    let newTop = e.clientY - offsetY - containerRect.top;
+
+    // Constrain the video within the videoSection boundaries
+    newLeft = Math.max(0, Math.min(containerRect.width - videoRect.width, newLeft));
+    newTop = Math.max(0, Math.min(containerRect.height - videoRect.height, newTop));
+
+    // Apply the constrained position
+    smallVideo.style.left = `${newLeft}px`;
+    smallVideo.style.top = `${newTop}px`;
 };
 
-smallvideo.addEventListener("mousedown", (e) => {
-    offsetX = e.clientX - smallvideo.offsetLeft;
-    offsetY = e.clientY - smallvideo.offsetTop;
+smallVideo.addEventListener("mousedown", (e) => {
+    const containerRect = videoSection.getBoundingClientRect();
+
+    offsetX = e.clientX - smallVideo.getBoundingClientRect().left + containerRect.left;
+    offsetY = e.clientY - smallVideo.getBoundingClientRect().top + containerRect.top;
+
     document.addEventListener("mousemove", move);
 });
 
@@ -18,38 +36,30 @@ document.addEventListener("mouseup", () => {
 
 
 
+//Video Toggle
 document.addEventListener("DOMContentLoaded", () => {
-    const largeVideo = document.querySelector(".video");
-    const smallVideo = document.querySelector(".insetVideo");
+    const largeVideo = document.querySelector(".localVideo"); // Main large video
+    const smallVideo = document.querySelector(".remoteVideo"); // Inset small video
 
     if (largeVideo && smallVideo) {
         smallVideo.addEventListener("click", () => {
             console.log("Small video clicked");
 
-            // Retrieve computed background styles
-            const largeVideoBackground = window.getComputedStyle(largeVideo).background;
-            const smallVideoBackground = window.getComputedStyle(smallVideo).background;
+            // Swap the video sources
+            const largeVideoSrc = largeVideo.src;
+            const smallVideoSrc = smallVideo.src;
 
-            console.log("Before swap:", {
-                largeVideoBackground,
-                smallVideoBackground
+            largeVideo.src = smallVideoSrc;
+            smallVideo.src = largeVideoSrc;
+
+            // Refresh the video playback
+            largeVideo.play();
+            smallVideo.play();
+
+            console.log("Video sources swapped:", {
+                largeVideoSrc: largeVideo.src,
+                smallVideoSrc: smallVideo.src
             });
-
-            // Swap the backgrounds
-            largeVideo.style.background = smallVideoBackground;
-            smallVideo.style.background = largeVideoBackground;
-
-            console.log("After swap:", {
-                largeVideoBackground: largeVideo.style.background,
-                smallVideoBackground: smallVideo.style.background
-            });
-
-            // Retrieve and swap background-size styles
-            const largeVideoBgSize = window.getComputedStyle(largeVideo).backgroundSize;
-            const smallVideoBgSize = window.getComputedStyle(smallVideo).backgroundSize;
-
-            largeVideo.style.backgroundSize = smallVideoBgSize;
-            smallVideo.style.backgroundSize = largeVideoBgSize;
         });
     } else {
         console.error("Large or small video element not found!");
@@ -68,7 +78,6 @@ function domContent(){
     const chatMessages = document.querySelector('.chatMessages');
     const typingIndicator = document.querySelector('.typingIndicator');
     const tabMessages = document.querySelector('.tab.active');
-    // const tabParticipants = document.querySelectorAll('.tab')[1];
     const videoSection = document.querySelector('.videoSection');
     const closeMsg = document.querySelector('.closeMsg');
 
