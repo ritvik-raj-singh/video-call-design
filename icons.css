@@ -50,8 +50,12 @@
     width: 32.513px;
     height: 32.18px;
 }
+
 .flipCamera{
     display: none;
+}
+.icon-hidden{
+  display:none;
 }
 
 @media only screen and (max-width: 961px) {
