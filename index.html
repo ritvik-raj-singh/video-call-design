@@ -6,21 +6,24 @@
     <title>VideoCall</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="icons.css">
+    <link rel="stylesheet" href="chatSection.css">
 </head>
 
 <body>
     <div class="wrapper">
         <div class="videoSection full">
             <!-- Main Video -->
-            <div class="mainVideo  full"> 
+            <div class="mainVideo  full">
                 <video class="localVideo" src="./video/video1.mp4" autoplay></video>
-                </div>
+            </div>
 
             <!-- Small Video for the user -->
-            <div id="smallvideo" class="insetVideo">
+            <div id="insetVideo" class="insetVideo">
+                <video class="remoteVideo" src="./video/video1.mp4" autoplay></video>
                 <button class="expand-icon">
                     <img src="./asset/expand.png" alt="Expand" />
                 </button>
+
             </div>
             <!-- Timer -->
             <div class="timer">

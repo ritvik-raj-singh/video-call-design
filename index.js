@@ -1,4 +1,4 @@
-const smallvideo = document.getElementById("smallvideo");
+const smallvideo = document.getElementById("insetVideo");
 let offsetX, offsetY;
 
 const move = (e) => {
@@ -20,7 +20,7 @@ document.addEventListener("mouseup", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     const largeVideo = document.querySelector(".video");
-    const smallVideo = document.querySelector(".smallvideo");
+    const smallVideo = document.querySelector(".insetVideo");
 
     if (largeVideo && smallVideo) {
         smallVideo.addEventListener("click", () => {

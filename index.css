@@ -43,7 +43,11 @@
     background-size: cover;
     overflow: hidden; 
 }
-
+.remoteVideo{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video fully covers its container */
+}
 .expand-icon {
     position: absolute;
     top: 5px;
@@ -65,198 +69,6 @@
     height: 16px;
     object-fit: contain;
 }
-.timer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top:5%;
-    left: 5%;
-    color: white;
-    font-size: 16px;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 2px 8px;
-    border-radius: 2rem;
-}
-.timer img{
-    width: 12px;
-    height: 12px;
-    margin-left: 2px;
-}
-.timer-text{
-    margin: 7px;
-}
-.chatSection {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 0;
-    height: 100%;
-    background-color: #ffffff;
-    transition: width 0.3s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    z-index: 100;
-}
-
-.chatSection.hidden {
-    width: 0;
-}
-
-.chatSection.expanded {
-    width: 30%; 
-}
-
-.chatHeader {
-    display: flex;
-    border-bottom: 1px solid #ddd;
-    height: 60px;
-    background: #1e3a5f;
-}
-
-.chatHeader .tab {
-    width: 15%;
-    border: none;
-    background: #476797;
-    cursor: pointer;
-}
-.Header-text{
-    font-size: 22px;
-    font-weight: bold;
-    height: 100%;
-    width: 85%;
-    padding-top: 15px;
-    padding-left: auto;
-    color: #fff;
-
-}
-
-.chatHeader .tab.active {
-    background: #1e3a5f;
-    color: #fff;
-}
-.chatHeader .tab.active img{
-    width: 36px;
-    height: 36px;
-    cursor: pointer;
-}
-
-/* Messages Section */
-.chatMessages {
-    flex: 1;
-    padding: 15px;
-    overflow-y: auto;
-}
-
-.messageRow {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 20px;
-}
-
-.messageRow.left {
-    justify-content: flex-start;
-}
-
-.messageRow.right {
-    justify-content: flex-end;
-}
-
-.profilePic {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.messageContent {
-    max-width: 75%;
-    background: #7aaef1;
-    color: #fff;
-    padding: 10px 15px;
-    border-radius: 10px;
-    position: relative;
-    font-size: 14px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.messageContent .messageHeader {
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
-    margin-bottom: 5px;
-}
-
-.messageContent .senderName {
-    font-weight: bold;
-    color:#ffffff
-}
-
-.messageContent .messageTime {
-    color: #ffffff;
-}
-
-.messageRow.right .messageContent {
-    background: #22569a;
-    color: #fff;
-    border-radius: 10px 0 10px 10px;
-}
-
-/* Typing Indicator */
-.typingIndicator {
-    font-size: 14px;
-    color: #aaa;
-    font-style: italic;
-    margin-top: 10px;
-}
-
-/* Input Section */
-.chatInputWrapper {
-    display: flex;
-    padding: 15px;
-    border-top: 1px solid #ddd;
-    background: #fff;
-}
-
-.chatInputWrapper input {
-    flex: 1;
-    padding: 10px 15px;
-    border: 1px solid #ddd;
-    border-radius: 25px;
-    outline: none;
-    font-size: 14px;
-    margin-right: 10px;
-}
-
-.chatInputWrapper button {
-    background: white;
-    color: #fff;
-    border: none;
-    padding: 5px 5px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.chatInputWrapper button img {
-    width: 26px;
-    height: 26px;
-    cursor: pointer;
-}
-
-.toggleChatButton {
-    bottom: 20px;
-    right: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-    border-radius: 50%;
-}
-
-
-
 @media only screen and (max-width: 961px) {
     .wrapper {
         width: 100vw;
@@ -310,31 +122,11 @@
         cursor: pointer;
         z-index: 2; 
     }
-    
     .expand-icon img {
         width: 10px;
         height: 10px;
         object-fit: contain;
     }
-    .timer{
-        position: absolute;
-        top:75%;
-        top: 4%;
-        left: 5%;
-        color: white;
-        font-size: 14px;
-        background: rgba(0, 0, 0, 0.5);
-        border-radius: 2rem;
-    }
-    .timer img{
-        width: 12px;
-        height: 12px;
-        margin-left: 2px;
-    }
-    .timer-text{
-        margin: 7px;
-    }
-
     .action-buttons {
         position: absolute;
         right: 5%;
@@ -359,24 +151,7 @@
         width: 34px;
         height: 34px;
     }
-    .action-buttons .chat img {
-        width: 28px;
-        height: 28px;
-    }
-    .chatSection.expanded {
-        height: 45%;
-        width: 100%;
-        border-top: #3D75FF;
-        border-top-left-radius: 1rem;
-        border-top-right-radius: 1rem;
-    }
-    .chatHeader .tab {
-        font-size: 14px;
-    }
-    .messageContent {
-        font-size: 12px;
-    }
-    
+
 }
 
 
