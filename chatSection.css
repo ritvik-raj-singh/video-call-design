@@ -12,7 +12,7 @@
     z-index: 100;
 }
 .chatSection.hidden {
-    width: 0;
+    width: 0; 
 }
 .chatSection.expanded {
     width: 30%; 
@@ -22,12 +22,17 @@
     border-bottom: 1px solid #ddd;
     height: 60px;
     background: #1e3a5f;
+    width: 100%;
 }
-.chatHeader .tab {
-    width: 15%;
+.tab {
+    width: 45px;
+    height: 45px;
     border: none;
-    background: #476797;
     cursor: pointer;
+    border-radius: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin: auto;
 }
 .Header-text{
     font-size: 22px;
@@ -35,18 +40,18 @@
     height: 100%;
     width: 85%;
     padding-top: 15px;
-padding-left: 2.5rem;
+    padding-left: 2.5rem;
     color: #fff;
 }
-.chatHeader .tab.active {
-    background: #1e3a5f;
+.tab.active {
+    background: #182f4b;
     color: #fff;
 }
 .chatHeader .tab.active img{
-    width: 36px;
-    height: 36px;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
-}
+}                
 /* Messages Section */
 .chatMessages {
     flex: 1;
@@ -167,5 +172,10 @@ padding-left: 2.5rem;
     .messageContent {
         font-size: 12px;
     }
+    .chatHeader .tab.active img{
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+    }   
     
 }
