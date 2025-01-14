@@ -1,4 +1,4 @@
-// Variables to manage the timer
+// Variables to manage the timerr
 let callStartTime;
 let timerInterval;
 
