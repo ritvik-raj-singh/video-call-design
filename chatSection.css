@@ -77,7 +77,7 @@
 }
 .msg-time span{
     display: block;
-    margin-left: 68%;
+    margin-right: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 12px;
     color: rgb(111, 111, 111);
@@ -106,7 +106,7 @@
     margin-right: 10px;
 }
 .messageContent {
-    max-width: 90%;
+    max-width: 80%;
     background: #7aaef1;
     color: #fff;
     padding: 10px 15px;
@@ -157,6 +157,28 @@
     font-size: 14px;
     margin-right: 10px;
 }
+#filePreviewContainer {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid rgb(241, 241, 241);
+    border-radius: 5px;
+}
+
+#filePreview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Adds spacing between images or file previews */
+}
+
+#filePreview img {
+    width: 100px;
+    height: 100px; /* Consistent size for all images */
+    object-fit: cover; /* Ensures the image fits well without distortion */
+    border: 1px solid rgb(241, 241, 241);
+    border-radius: 5px; /* Adds rounded corners */
+}
+
+
 .chatInputWrapper button {
     background: white;
     color: #fff;
@@ -169,8 +191,9 @@
     justify-content: center;
 }
 .chatInputWrapper button img {
-    width: 26px;
-    height: 26px;
+    padding: 2px;
+    width: 24px;
+    height: 24px;
     cursor: pointer;
 }
 .toggleChatButton {
@@ -181,7 +204,7 @@
     border-radius: 50%;
 }
 
-@media only screen and (max-width: 961px) {
+@media (max-width: 768px) and (min-height: 600px) {
     .action-buttons .chat img {
         width: 28px;
         height: 28px;

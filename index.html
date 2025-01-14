@@ -56,7 +56,7 @@
                 <button class="flipCamera">
                     <img src="./asset/cam-rotate.png" alt="Camera">
                 
-                <button class="message">
+                <button class="message" onclick="toggleButtonStyle()">
                     <img src="./asset/message.png" alt="Message">
                 </button>
             </div>
@@ -67,7 +67,7 @@
             <div class="chatHeader">
 
                 <div class="Header-text">Messages</div>
-                <button class="tab active"><img src="./asset/cross.png" class="closeMsg" alt="close"> </button>
+                <button class="tab active"><img src="./asset/cross.png" class="closeMsg" alt="close" onclick="toggleButtonStyle()"> </button>
                 <!-- <button class="tab">Participants</button> -->
             </div>
 
@@ -83,7 +83,7 @@
                     <div class="messageContent">
                         <div class="messageText">Hello Guys! What's your opinion?</div>
                     </div>
-                    <span class="messageTime">2:12 pm</span>
+                    <span class="messageTime">2:12 PM</span>
                 </div>
                 </div>
 
@@ -92,14 +92,18 @@
             </div>
 
             <!-- Input Section -->
+            <div id="filePreviewContainer" style="display: none;">
+                <div id="filePreview"></div>
+            </div>
             <div class="chatInputWrapper">
                 <input type="text" placeholder="Write message here">
                 <button class="sendButton">
                     <label for="fileInput" class="sendButton">
-                        <img src="./asset/attach-file.png" alt="Send">
+                        <img src="./asset/attach-file.png" alt="Attach File">
                     </label>
-                    <input type="file" id="fileInput" class="fileInput" style="display: none;" />
+                    <input type="file" id="fileInput" class="fileInput" style="display: none;" multiple />
                 </button>
+                
                 <button class="sendButton">
                     <img src="./asset/send.png" alt="Send">
                 </button>
