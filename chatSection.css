@@ -104,7 +104,8 @@
     margin-right: 10px;
 }
 .messageContent {
-    max-width: 100%;
+    max-width: 90%;
+    min-width: 40%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
