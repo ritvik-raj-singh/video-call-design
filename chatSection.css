@@ -104,8 +104,7 @@
     margin-right: 10px;
 }
 .messageContent {
-    max-width: 90%;
-    min-width: 40%;
+    max-width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -118,6 +117,10 @@
     font-size: 14px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow: hidden;
+}
+.messageText{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 .messageContent .messageHeader {
     display: flex;
