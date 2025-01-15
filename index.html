@@ -72,7 +72,7 @@
             </div>
 
             <!-- Messages Section -->
-            <div class="chatMessages">
+            <div class="chatMessages" id="messageContainer">
                 <!-- Message from Casey -->
                 <div class="messageRow left">
                     <div class="chat-headers">
@@ -90,12 +90,12 @@
                 <!-- Typing Indicator -->
                 <div class="typingIndicator">John is typing...</div>
             </div>
-
-            <!-- Input Section -->
             <div id="filePreviewContainer" style="display: none;">
                 <div id="filePreview"></div>
             </div>
+
             <div class="chatInputWrapper">
+                <!-- Input Section -->
                 <input type="text" placeholder="Write message here...">
                 <button class="sendButton">
                     <label for="fileInput" class="sendButton">
@@ -104,7 +104,7 @@
                     <input type="file" id="fileInput" class="fileInput" style="display: none;" multiple />
                 </button>
                 
-                <button class="sendButton">
+                <button class="sendButton" id="sendChat">
                     <img src="./images/send.png" alt="Send">
                 </button>
             </div>
