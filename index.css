@@ -24,6 +24,7 @@
     width: 100%;
     height: 100%; 
     z-index: 1;
+    object-fit: cover;
 }
 .localVideo {
     width: 100%;
@@ -75,33 +76,39 @@
         background: black;
     }
 
-    .videoSection.full{
+    .videoSection.full {
         width: 100%;
         height: 100%;
         position: relative;
     }
-    .videoSection.compressed{
-            width: 100%;
-            height: 55%;
-            position: relative;
-            border-bottom-left-radius: 1rem;
-            border-bottom-right-radius: 1rem;
+
+    .videoSection.compressed {
+        width: 100%;
+        height: 56%;
+        position: relative;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        -webkit-border-bottom-left-radius: 1rem; /* Safari prefix */
+        -webkit-border-bottom-right-radius: 1rem; /* Safari prefix */
     }
 
-    .mainVideo  {
+    .mainVideo {
         width: 100%;
         height: 100%;
-        }    
+        object-fit: cover;
+    }
+
     .insetVideo {
-        width:110px;
+        width: 110px;
         height: 130px;
         position: absolute;
         top: 1%;
         right: 2%;
         border-radius: 10px;
         border: 0;
+        -webkit-border-radius: 10px; /* Safari prefix */
     }
-    
+
     .expand-icon {
         position: absolute;
         top: 5px;
@@ -111,17 +118,21 @@
         background-color: rgba(0, 0, 0, 0.6); 
         border: none;
         border-radius: 50%;
+        -webkit-border-radius: 50%; /* Safari prefix */
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        z-index: 2; 
+        z-index: 2;
     }
+
     .expand-icon img {
         width: 10px;
         height: 10px;
         object-fit: contain;
+        -webkit-object-fit: contain; /* Safari prefix */
     }
+
     .action-buttons {
         position: absolute;
         right: 5%;
@@ -135,6 +146,7 @@
         width: 50px;
         height: 50px;
         border-radius: 50%;
+        -webkit-border-radius: 50%; /* Safari prefix */
         border: none;
         background-color: rgba(0, 0, 0, 0.5);
         display: flex;
@@ -146,7 +158,7 @@
         width: 34px;
         height: 34px;
     }
-
 }
+
 
 

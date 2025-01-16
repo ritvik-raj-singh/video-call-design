@@ -40,7 +40,23 @@ document.addEventListener("mouseup", () => {
 document.addEventListener("DOMContentLoaded", () => {
     const largeVideo = document.querySelector(".localVideo"); // Main large video
     const smallVideo = document.querySelector(".remoteVideo"); // Inset small video
-    const expandIcon = document.querySelector(".expand-icon"); // Inset small video
+    const expandIcon = document.querySelector(".expand-icon"); // Icon to expand
+
+    // Helper function to check if the video source is a valid video file type
+    const isValidVideoSource = (src) => {
+        const videoExtensions = ['.mp4', '.webm', '.ogg'];
+        return videoExtensions.some(ext => src.toLowerCase().endsWith(ext));
+    };
+
+    const playVideoSafely = (videoElement) => {
+        if (isValidVideoSource(videoElement.src)) {
+            videoElement.play().catch((error) => {
+                console.error("Error trying to play video:", error);
+            });
+        } else {
+            console.log("Invalid video source, not playing:", videoElement.src);
+        }
+    };
 
     if (largeVideo && smallVideo) {
         smallVideo.addEventListener("click", () => {
@@ -53,18 +69,18 @@ document.addEventListener("DOMContentLoaded", () => {
             largeVideo.src = smallVideoSrc;
             smallVideo.src = largeVideoSrc;
 
-            // Refresh the video playback
-            largeVideo.play();
-            smallVideo.play();
-
+            // Attempt to play only if the video source is valid
+            playVideoSafely(largeVideo);
+            playVideoSafely(smallVideo);
 
             console.log("Video sources swapped:", {
                 largeVideoSrc: largeVideo.src,
                 smallVideoSrc: smallVideo.src
             });
         });
+
         expandIcon.addEventListener("click", () => {
-            console.log("Small video clicked");
+            console.log("Expand icon clicked");
 
             // Swap the video sources
             const largeVideoSrc = largeVideo.src;
@@ -73,10 +89,9 @@ document.addEventListener("DOMContentLoaded", () => {
             largeVideo.src = smallVideoSrc;
             smallVideo.src = largeVideoSrc;
 
-            // Refresh the video playback
-            largeVideo.play();
-            smallVideo.play();
-
+            // Attempt to play only if the video source is valid
+            playVideoSafely(largeVideo);
+            playVideoSafely(smallVideo);
 
             console.log("Video sources swapped:", {
                 largeVideoSrc: largeVideo.src,
@@ -87,6 +102,31 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Large or small video element not found!");
     }
 });
+
+
+
+const videoElementremote = document.querySelector('.remoteVideo');
+if (!videoElementremote.src || videoElement.src === '') {
+    console.warn('No video source provided.');
+    videoElementremote.style.backgroundColor = 'black'; // Optional: fallback background color
+    videoElementremote.style.backgroundImage = 'url(./images/no-src.png)'; // Set background image
+    videoElementremote.style.backgroundSize = 'cover'; // Make the image cover the entire element
+    videoElementremote.style.backgroundPosition = 'center'; // Center the background image
+    videoElementremote.style.position = 'relative'; // Ensure proper layout
+}
+
+const videoElementlocal = document.querySelector('.localVideo');
+if (!videoElementlocal.src || videoElementlocal.src === '') {
+    console.warn('No video source provided.');
+    videoElementlocal.style.backgroundColor = 'black'; // Optional: fallback background color
+    videoElementlocal.style.backgroundImage = 'url(./images/no-src.png)'; // Set background image
+    videoElementlocal.style.backgroundSize = 'cover'; // Make the image cover the entire element
+    videoElementlocal.style.backgroundPosition = 'center'; // Center the background image
+    videoElementlocal.style.position = 'relative'; // Ensure proper layout
+}
+
+
+
 
 
 //for message box display
@@ -145,12 +185,12 @@ function domContent() {
             text.forEach(file => {
                 const fileWrapper = document.createElement('div');
                 fileWrapper.className = 'file-preview-item';
+                fileWrapper.style.display = '-webkit-flex'; // Add for older Safari versions
                 fileWrapper.style.display = 'flex';
                 fileWrapper.style.flexDirection = 'column';
                 fileWrapper.style.justifyContent = 'space-evenly';
                 fileWrapper.style.alignItems = 'center';
                 fileWrapper.style.flexWrap = 'wrap';
-                fileWrapper.style.alignItems = 'center';
                 fileWrapper.style.margin = '10px';
                 fileWrapper.dataset.filename = file.name;  // Store filename for reference
                 fileWrapper.dataset.file = file.url;      // Store the actual file URL for access
@@ -192,6 +232,7 @@ function domContent() {
                 fileName.style.fontSize = '12px';
                 fileName.style.marginTop = '5px';
                 fileName.style.color = 'white';
+                fileName.style.webkitFontSmoothing = 'antialiased'; // Smooth fonts for Safari
 
                 // Click event to open the file or image
                 fileIcon.addEventListener('click', () => {
@@ -410,10 +451,14 @@ document.getElementById('fileInput').addEventListener('change', function (event)
                 const fileType = file.name.split('.').pop().toLowerCase();
                 // Create a wrapper div for the file icon and name
                 const fileWrapper = document.createElement('div');
+                fileWrapper.style.display = '-webkit-flex'; // For older Safari versions
                 fileWrapper.style.display = 'flex';
+                fileWrapper.style.webkitFlexDirection = 'column'; // For older Safari versions
                 fileWrapper.style.flexDirection = 'column';
-                fileWrapper.style.alignItems = 'center'; // Optional: centers icon and text
-                fileWrapper.style.margin = '10px'; // Optional: adds spacing between files
+                fileWrapper.style.webkitAlignItems = 'center'; // For older Safari versions
+                fileWrapper.style.alignItems = 'center';
+                fileWrapper.style.margin = '10px';
+                fileWrapper.style.boxSizing = 'border-box'; // Ensure consistent box model
                 filePreview.appendChild(fileWrapper);
                 const iconMap = {
                     doc: './images/doc.png',

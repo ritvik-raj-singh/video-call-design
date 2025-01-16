@@ -231,37 +231,50 @@
         width: 28px;
         height: 28px;
     }
+
     .chatSection.expanded {
         height: 45%;
         width: 100%;
         border-top: #3D75FF;
-        /* border-top-left-radius: 1rem;
-        border-top-right-radius: 1rem; */
+        /* Safari might have issues with border radius here; add prefixes */
+        /* Uncomment these if needed */
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        -webkit-border-top-left-radius: 1rem;
+        -webkit-border-top-right-radius: 1rem;
     }
+
     .chatHeader .tab {
         font-size: 14px;
     }
+
     .messageContent {
         font-size: 12px;
     }
-    .chatHeader .tab.active img{
+
+    .chatHeader .tab.active img {
         width: 25px;
         height: 25px;
         cursor: pointer;
-    }  
+    }
+
     #filePreviewContainer {
         margin-top: 10px;
         padding: 10px;
         border: 1px solid rgb(241, 241, 241);
         border-radius: 5px;
+        -webkit-border-radius: 5px; /* Safari prefix */
     }
-    
+
     #filePreview {
         display: flex;
         flex-wrap: wrap;
         gap: 3px; /* Adds spacing between items */
+        /* Add fallback for older Safari versions */
+        margin-right: -3px; /* Adjust for consistent spacing */
+        margin-bottom: -3px;
     }
-    
+
     .file-name {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 6px;
@@ -269,14 +282,14 @@
         margin-top: 3px;
         cursor: pointer;
     }
-    
+
     #filePreview img {
         width: 40px;
         height: 40px; /* Consistent size for all images */
         object-fit: cover; /* Ensures the image fits well without distortion */
+        -webkit-object-fit: cover; /* Safari prefix for object-fit */
         border: 1px solid rgb(241, 241, 241);
         border-radius: 5px; /* Adds rounded corners */
+        -webkit-border-radius: 5px; /* Safari prefix */
     }
-     
-    
 }
