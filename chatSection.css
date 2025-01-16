@@ -235,8 +235,8 @@
         height: 45%;
         width: 100%;
         border-top: #3D75FF;
-        border-top-left-radius: 1rem;
-        border-top-right-radius: 1rem;
+        /* border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem; */
     }
     .chatHeader .tab {
         font-size: 14px;
