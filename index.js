@@ -35,6 +35,18 @@ document.addEventListener("mouseup", () => {
 });
 
 
+document.addEventListener("focusin", () => {
+    // When input is focused, prevent layout shifts
+    document.querySelector(".chatSection").style.height = "calc(100% - 60px)"; // Adjust for keyboard
+});
+
+document.addEventListener("focusout", () => {
+    // Reset layout when input loses focus
+    document.querySelector(".chatSection").style.height = "100%";
+});
+
+
+
 
 
 //Video Toggle
