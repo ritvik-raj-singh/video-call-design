@@ -507,6 +507,10 @@ document.getElementById('fileInput').addEventListener('change', function (event)
         }
     });
 });
+//message selection
+function toggleButtonStyle(button = document.querySelector('.message')) {
+    button.classList.toggle("active");
+}
 
 
 
