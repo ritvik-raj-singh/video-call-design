@@ -238,10 +238,10 @@
         width: 100%;
         max-height: 50vh; /* Ensure it doesn't exceed half the viewport height */
         border-top: #3D75FF;
-        border-top-left-radius: 1rem;
+/*         border-top-left-radius: 1rem;
         border-top-right-radius: 1rem;
         -webkit-border-top-left-radius: 1rem;
-        -webkit-border-top-right-radius: 1rem;
+        -webkit-border-top-right-radius: 1rem; */
          overflow: hidden;
     }
     .chatInputWrapper {
