@@ -128,10 +128,6 @@ if (!videoElementlocal.src || videoElementlocal.src === '') {
     videoElementlocal.style.position = 'relative'; // Ensure proper layout
 }
 
-
-
-
-
 //for message box display
 var toggleChatButton;
 function domContent() {
