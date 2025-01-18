@@ -229,6 +229,48 @@
     border-radius: 50%;
 }
 
+
+/* Safari-specific fixes */
+@supports (-webkit-touch-callout: none) {
+    .chatSection {
+        transition: width 0.3s ease-in-out, max-width 0.3s ease-in-out; /* Add max-width for Safari */
+    }
+    .chatInputWrapper input {
+        flex: 1 1 auto; /* Ensure input does not expand unexpectedly */
+        max-width: 100%; /* Prevent the input box from growing */
+        -webkit-appearance: none; /* Safari-specific to normalize input styling */
+    }
+    .chatMessages {
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling for Safari */
+    }
+}
+
+/* General styles */
+.chatSection {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    max-width: 30%; /* Use max-width to control expansion in Safari */
+    background-color: #ffffff;
+    transition: width 0.3s ease-in-out, max-width 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 100;
+}
+.chatSection.expanded {
+    width: 30%;
+    max-width: 30%; /* Ensure compatibility with Safari */
+}
+.chatInputWrapper input {
+    flex-grow: 1;
+    max-width: 100%; /* Limit the maximum width of the input */
+    box-sizing: border-box; /* Ensure padding and border do not affect width */
+}
+
+
 @media (max-width: 768px) and (min-height: 600px) {
     .action-buttons .chat img {
         width: 28px;
