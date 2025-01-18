@@ -267,14 +267,6 @@
         border-radius: 5px;
         -webkit-border-radius: 5px;
     }
-        .chatSection {
-        max-height: calc(100vh - 50px); /* Account for header and input heights */
-        overflow: hidden;
-    }
-
-    .chatMessages {
-        max-height: calc(100vh - 100px); /* Adjust for input wrapper */
-    }
 }
 
 
