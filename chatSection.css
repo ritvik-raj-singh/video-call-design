@@ -290,10 +290,6 @@
         border-top: #3D75FF;
         /* Safari might have issues with border radius here; add prefixes */
         /* Uncomment these if needed */
-        border-top-left-radius: 1rem;
-        border-top-right-radius: 1rem;
-        -webkit-border-top-left-radius: 1rem;
-        -webkit-border-top-right-radius: 1rem;
     }
 
     .chatHeader .tab {
