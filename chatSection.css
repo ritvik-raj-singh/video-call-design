@@ -270,6 +270,21 @@
         overflow-y: auto;
         background-color: rgba(0, 255, 0, 0.2); /* Light green to visualize */
     }
+    .chatSection {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        max-height: calc(100% - env(safe-area-inset-bottom)); /* Account for safe area */
+        background-color: white;
+        overflow: hidden;
+    }
+
+    .chatInputWrapper {
+        position: fixed;
+        bottom: env(safe-area-inset-bottom); /* Prevents overlap with the home indicator */
+        width: 100%;
+        background-color: white;
+    }
 
     #filePreview img {
         width: 40px;
