@@ -4,6 +4,9 @@
     padding:0;
     font-family:'Helvetica' ,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+.wrapper{
+    background:black;
+}
 .chatSection {
     position: fixed;
     bottom: 0;
