@@ -184,6 +184,7 @@ function domContent() {
         messageContent.classList.add('messageContent');
 
         if (isFile) {
+             messageContent.style.backgroundColor='white'
             // If the message is a file
             text.forEach(file => {
                 const fileWrapper = document.createElement('div');
@@ -197,7 +198,7 @@ function domContent() {
                 fileWrapper.style.margin = '10px';
                 fileWrapper.dataset.filename = file.name;  // Store filename for reference
                 fileWrapper.dataset.file = file.url; 
-                fileWrapper.style.backgroundColor='none'   // Store the actual file URL for access
+                fileWrapper.style.backgroundColor='white'   // Store the actual file URL for access
 
                 // Create file icon
                 const fileType = file.name.split('.').pop().toLowerCase();
@@ -227,7 +228,7 @@ function domContent() {
                 fileIcon.style.cursor = 'pointer';
                 fileIcon.style.width = '60px';
                 fileIcon.style.height = '60px';
-                fileWrapper.style.backgroundColor='none'
+                fileWrapper.style.backgroundColor='white'
 
                 // File name
                 const fileName = document.createElement('span');
