@@ -5,6 +5,10 @@
     font-family:'Helvetica' ,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.wrapper{
+    background:black;
+}
+
 .videoSection.full{
     width: 100%;
     height: 100%;
