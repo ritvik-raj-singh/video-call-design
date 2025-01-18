@@ -3,13 +3,6 @@
     box-sizing: border-box;
     padding: 0;
 }
-@supports (-webkit-touch-callout: none) {
-  .wrapper, .videoSection, .chatSection {
-    min-height: 100vh; /* Ensure the layout covers the full viewport */
-    max-height: 100vh; /* Prevent exceeding the viewport height */
-}
-
-}
 
 .videoSection.full{
     width: 100%;
