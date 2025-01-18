@@ -196,7 +196,8 @@ function domContent() {
                 fileWrapper.style.flexWrap = 'wrap';
                 fileWrapper.style.margin = '10px';
                 fileWrapper.dataset.filename = file.name;  // Store filename for reference
-                fileWrapper.dataset.file = file.url;      // Store the actual file URL for access
+                fileWrapper.dataset.file = file.url; 
+                fileWrapper.style.backgroundColor:'none'   // Store the actual file URL for access
 
                 // Create file icon
                 const fileType = file.name.split('.').pop().toLowerCase();
@@ -226,6 +227,7 @@ function domContent() {
                 fileIcon.style.cursor = 'pointer';
                 fileIcon.style.width = '60px';
                 fileIcon.style.height = '60px';
+                fileWrapper.style.backgroundColor:'none'
 
                 // File name
                 const fileName = document.createElement('span');
