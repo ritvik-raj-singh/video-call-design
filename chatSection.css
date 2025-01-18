@@ -233,7 +233,7 @@
 /* iOS Safari Fixes */
 @supports (-webkit-touch-callout: none) {
     .chatSection.expanded {
-        height: 45%;
+/*         height: 45%; */
         width: 100%;
         max-height: 50vh; /* Ensure it doesn't exceed half the viewport height */
         border-top: #3D75FF;
