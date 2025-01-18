@@ -267,51 +267,6 @@
         border-radius: 5px;
         -webkit-border-radius: 5px;
     }
-    /* Prevent layout shift caused by keyboard */
-    body {
-        height: 100vh;
-        overflow: hidden; /* Prevents the body from scrolling */
-        position: relative;
-    }
-
-    /* Prevent chat input wrapper from resizing */
-    .chatInputWrapper {
-        position: fixed; /* Fixes the chat input at the bottom */
-        bottom: 0;
-        width: 100%;
-        background: #fcfcfc;
-        z-index: 101; /* Ensures it's above other elements */
-        padding: 15px;
-        border-top: 1px solid #ddd;
-    }
-
-    /* Prevent input box resizing */
-    .chatInputWrapper input {
-        font-size: 16px; /* Prevents zooming */
-        flex: 1 1 auto;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-
-    /* Ensure chat section height adapts */
-    .chatSection.expanded {
-        height: calc(100% - 60px); /* Subtracts header height */
-        max-height: calc(100vh - 60px); /* Prevents overflow when keyboard is shown */
-    }
-
-    /* Prevent space above/below the input field */
-    .chatSection {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    /* Prevent content from scrolling unexpectedly */
-    .chatMessages {
-        flex: 1;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-    }
 }
 
 
