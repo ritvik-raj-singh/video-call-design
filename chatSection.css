@@ -248,6 +248,8 @@
         border-top-right-radius: 1rem;
         -webkit-border-top-left-radius: 1rem;
         -webkit-border-top-right-radius: 1rem;
+         margin:0;
+         padding:0;
         overflow: hidden;
     }
     .chatInputWrapper {
