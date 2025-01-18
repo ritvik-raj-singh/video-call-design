@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin:0;
     padding:0;
+    font-family:'Helvetica' ,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .chatSection {
     position: fixed;
@@ -70,7 +71,6 @@
     justify-content: space-evenly;
 }
 .chat-headers span{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 12px;
     color: rgb(111, 111, 111);
     font-weight: 400;
@@ -83,7 +83,6 @@
 }
 .msg-time span{
     display: block;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 12px;
     color: rgb(111, 111, 111);
     font-weight: 400;
@@ -120,12 +119,7 @@
     border-radius: 10px;
     position: relative;
     font-size: 14px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow: hidden;
-}
-.messageText{
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
 }
 .messageContent .messageHeader {
     display: flex;
@@ -169,7 +163,6 @@
     font-size: 14px;
     margin-right: 10px;
     padding: 3%;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 #filePreviewContainer {
     margin-top: 10px;
@@ -185,7 +178,6 @@
 }
 
 .file-name {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 10px;
     color: #000000;
     margin-top: 5px;
@@ -238,6 +230,8 @@
     box-sizing: border-box;
     margin:0;
     padding:0;
+    font-family:'Helvetica' ,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
     .chatSection.expanded {
         height: 45%;
@@ -338,7 +332,6 @@
     }
 
     .file-name {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 6px;
         color: #000000;
         margin-top: 3px;
