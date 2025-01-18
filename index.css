@@ -20,7 +20,6 @@
     height: 100%; 
     z-index: 1;
     object-fit: cover;
-    background-color:black;
 }
 .localVideo {
     width: 100%;
