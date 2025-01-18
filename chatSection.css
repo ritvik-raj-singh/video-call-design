@@ -248,9 +248,7 @@
         border-top-right-radius: 1rem;
         -webkit-border-top-left-radius: 1rem;
         -webkit-border-top-right-radius: 1rem;
-         margin:0;
-         padding:0;
-        overflow: hidden;
+         overflow: hidden;
     }
     .chatInputWrapper {
     background-color: rgba(255, 0, 0, 0.2); /* Light red to visualize */
