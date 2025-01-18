@@ -6,12 +6,10 @@
 @supports (-webkit-touch-callout: none) {
     html, body {
         height: 100vh;
-        overflow: hidden; /* Prevent scroll */
     }
     
     .wrapper {
     height: 100%;
-    overflow: hidden;
 }
 }
 
