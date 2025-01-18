@@ -510,32 +510,6 @@ document.getElementById('fileInput').addEventListener('change', function (event)
 
 
 
-//message selection
-function toggleButtonStyle(button = document.querySelector('.message')) {
-    button.classList.toggle("active");
-}
-
-const wrapper = document.querySelector(".wrapper");
-
-
-// Detect keyboard appearance
-window.addEventListener("resize", () => {
-    const viewportHeight = window.innerHeight;
-    const deviceHeight = window.screen.height;
-
-    // If the viewport height is reduced (keyboard open)
-    if (viewportHeight < deviceHeight * 0.8) {
-        wrapper.style.height = `${viewportHeight}px`;
-        wrapper.style.overflow = "hidden"; // Prevent additional scrolling
-    } else {
-        // Reset when keyboard is closed
-        wrapper.style.height = "100vh";
-        wrapper.style.overflow = "auto";
-    }
-});
-
-
-
 
 
 
