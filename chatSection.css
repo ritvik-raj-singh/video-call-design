@@ -243,9 +243,13 @@
         -webkit-border-top-right-radius: 1rem;
         overflow: hidden;
     }
+    .chatInputWrapper {
+    background-color: rgba(255, 0, 0, 0.2); /* Light red to visualize */
+    }
 
     .chatInputWrapper input {
         font-size: 16px; /* Prevents zoom on focus */
+        margin-bottom: 0px;
         -webkit-appearance: none; /* Normalize input appearance */
         border: 1px solid #ddd;
         border-radius: 25px;
@@ -256,6 +260,7 @@
     .chatMessages {
         -webkit-overflow-scrolling: touch; /* Enables smooth scrolling */
         overflow-y: auto;
+        background-color: rgba(0, 255, 0, 0.2); /* Light green to visualize */
     }
 
     #filePreview img {
