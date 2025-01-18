@@ -515,27 +515,24 @@ function toggleButtonStyle(button = document.querySelector('.message')) {
     button.classList.toggle("active");
 }
 
-function handleKeyboardSpace() {
-    const wrapper = document.querySelector(".wrapper");
-    
-    // Detect keyboard appearance
-    window.addEventListener("resize", () => {
-        const viewportHeight = window.innerHeight;
-        const deviceHeight = window.screen.height;
+const wrapper = document.querySelector(".wrapper");
 
-        // If the viewport height is reduced (keyboard open)
-        if (viewportHeight < deviceHeight * 0.8) {
-            wrapper.style.height = `${viewportHeight}px`;
-            wrapper.style.overflow = "hidden"; // Prevent additional scrolling
-        } else {
-            // Reset when keyboard is closed
-            wrapper.style.height = "100vh";
-            wrapper.style.overflow = "auto";
-        }
-    });
-}
 
-handleKeyboardSpace();
+// Detect keyboard appearance
+window.addEventListener("resize", () => {
+    const viewportHeight = window.innerHeight;
+    const deviceHeight = window.screen.height;
+
+    // If the viewport height is reduced (keyboard open)
+    if (viewportHeight < deviceHeight * 0.8) {
+        wrapper.style.height = `${viewportHeight}px`;
+        wrapper.style.overflow = "hidden"; // Prevent additional scrolling
+    } else {
+        // Reset when keyboard is closed
+        wrapper.style.height = "100vh";
+        wrapper.style.overflow = "auto";
+    }
+});
 
 
 
