@@ -34,7 +34,6 @@ document.addEventListener("mouseup", () => {
     document.removeEventListener("mousemove", move);
 });
 
-
 document.addEventListener("focusin", (e) => {
     if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") {
         document.body.style.height = "calc(100vh - 50px)"; // Adjust body height for keyboard
@@ -44,6 +43,7 @@ document.addEventListener("focusin", (e) => {
 document.addEventListener("focusout", () => {
     document.body.style.height = "100vh"; // Reset body height
 });
+
 
 
 
