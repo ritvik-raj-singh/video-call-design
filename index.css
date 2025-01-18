@@ -67,7 +67,7 @@
         height: 100vh;
         overflow: hidden !important;
         margin: 0;
-        background: black;
+        background: none;
     }
 
     .videoSection.full {
