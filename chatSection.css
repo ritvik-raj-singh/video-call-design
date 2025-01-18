@@ -234,6 +234,11 @@
 
 /* iOS Safari Fixes */
 @supports (-webkit-touch-callout: none) {
+    * {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
     .chatSection.expanded {
         height: 45%;
         width: 100%;
@@ -248,6 +253,7 @@
     .chatInputWrapper {
     background-color: rgba(255, 0, 0, 0.2); /* Light red to visualize */
     }
+    
 
     .chatInputWrapper input {
         font-size: 16px; /* Prevents zoom on focus */
