@@ -68,13 +68,6 @@
     object-fit: contain;
 }
 @media (max-width: 768px) and (min-height: 600px) {
-    .wrapper {
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden !important;
-        margin: 0;
-        background: none;
-    }
 
     .videoSection.full {
         width: 100%;
