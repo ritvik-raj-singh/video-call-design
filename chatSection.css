@@ -272,6 +272,10 @@
         border-radius: 5px;
         -webkit-border-radius: 5px;
     }
+    .chatInputWrapper {
+    padding-bottom: env(safe-area-inset-bottom); /* Handles space caused by the keyboard */
+}
+
 }
 
 
