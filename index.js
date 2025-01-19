@@ -237,7 +237,7 @@ function domContent() {
                 fileName.style.fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
                 fileName.style.fontSize = '12px';
                 fileName.style.marginTop = '5px';
-                fileName.style.color = 'white';
+                fileName.style.color = 'grey';
                 fileName.style.webkitFontSmoothing = 'antialiased'; // Smooth fonts for Safari
 
                 // Click event to open the file or image
