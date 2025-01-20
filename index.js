@@ -184,7 +184,7 @@ function domContent() {
         messageContent.classList.add('messageContent');
 
         if (isFile) {
-             messageContent.style.backgroundColor='white'
+            messageContent.style.backgroundColor = 'white';
             // If the message is a file
             text.forEach(file => {
                 const fileWrapper = document.createElement('div');
@@ -197,11 +197,12 @@ function domContent() {
                 fileWrapper.style.flexWrap = 'wrap';
                 fileWrapper.style.margin = '10px';
                 fileWrapper.dataset.filename = file.name;  // Store filename for reference
-                fileWrapper.dataset.file = file.url; 
-                fileWrapper.style.backgroundColor='white'   // Store the actual file URL for access
-
-                // Create file icon
+                fileWrapper.dataset.file = file.url;      // Store the actual file URL for access
+                fileWrapper.style.backgroundColor = 'white';
+        
+                // Create file icon or image preview
                 const fileType = file.name.split('.').pop().toLowerCase();
+                const imageFormats = ['png', 'jpg', 'jpeg', 'gif', 'bmp', 'webp'];
                 const iconMap = {
                     doc: './images/doc.png',
                     docx: './images/doc.png',
@@ -216,19 +217,22 @@ function domContent() {
                     pdf: './images/pdf.png',
                     mp4: './images/mp4.png',
                     mp3: './images/mp3.png',
-                    png: './images/png.png',
-                    jpg: './images/jpg.png',
-                    jpeg: './images/jpeg.png',
                     default: './images/file.png'
                 };
-
+        
                 const fileIcon = document.createElement('img');
-                fileIcon.src = iconMap[fileType] || './images/file.png';
                 fileIcon.alt = file.name;
                 fileIcon.style.cursor = 'pointer';
                 fileIcon.style.width = '60px';
                 fileIcon.style.height = '60px';
-                fileWrapper.style.backgroundColor='white'
+        
+                if (imageFormats.includes(fileType)) {
+                    // Display the actual image for image files
+                    fileIcon.src = file.url;
+                } else {
+                    // Use a default icon for other file types
+                    fileIcon.src = iconMap[fileType] || './images/file.png';
+                }
 
                 // File name
                 const fileName = document.createElement('span');
